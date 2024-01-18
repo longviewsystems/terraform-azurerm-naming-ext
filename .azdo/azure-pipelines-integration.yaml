@@ -1,0 +1,114 @@
+trigger:
+  branches:
+    include:
+    - main
+
+pr:
+  branches:
+    include:
+    - main
+  #drafts: false
+
+variables:
+  - template: templates/standard_variables.yaml
+  - group: terratest_sp_auth
+  
+pool:
+  vmImage: ubuntu-latest # This is the default if you don't specify a pool or vmImage.
+
+stages:
+  - stage:
+    displayName: 'Validate Configuration'
+    condition: and(succeeded(), eq(variables.isPR, 'true'))
+    jobs:
+  
+    - job: ValidateConfig
+      displayName: Check Access
+      steps:
+      - bash: |
+          go version
+          terraform -version
+          curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+          tflint --version    
+        displayName: Tool versions  
+      - bash: |
+            az login --service-principal -u $ARM_CLIENT_ID -p $ARM_CLIENT_SECRET --tenant $ARM_TENANT_ID
+            az account set --subscription $ARM_SUBSCRIPTION_ID
+            az account list --output table
+        workingDirectory: $(System.DefaultWorkingDirectory)     
+        displayName: 'Test Az SP Login'
+        env:
+            ARM_CLIENT_ID: $(variables.ARM_CLIENT_ID)
+            ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)
+            ARM_SUBSCRIPTION_ID: $(variables.ARM_SUBSCRIPTION_ID)
+            ARM_TENANT_ID: $(variables.ARM_TENANT_ID)
+        continueOnError: true      
+    
+  - stage: pr_checks
+    displayName: "Static Code Analysis"
+    #Run prior to a PR only.
+    condition: and(succeeded(), eq(variables.isPR, 'true'))
+    jobs:
+    - job: tflint_job
+      displayName: Run TFLint
+      steps:
+      - bash: curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+        workingDirectory: $(System.DefaultWorkingDirectory)
+        displayName: 'Install TFLint'      
+      - bash: tflint --init
+        workingDirectory: $(System.DefaultWorkingDirectory)
+        displayName: 'Initialize TFLint'
+      - bash: terraform init  
+        workingDirectory: $(System.DefaultWorkingDirectory)
+        displayName: 'Initialize Terraform'        
+      - bash: |
+          tflint --format junit > $(System.DefaultWorkingDirectory)/TFLint-Report.xml
+        workingDirectory: $(System.DefaultWorkingDirectory)
+        displayName: 'Run TFLint'      
+        continueOnError: false  
+      - task: PublishTestResults@2
+        displayName: Publish tflint results
+        condition: succeededOrFailed()
+        inputs:
+          testResultsFormat: 'JUnit'
+          testResultsFiles: '**/*TFLint-Report.xml'
+          searchFolder: '$(System.DefaultWorkingDirectory)'
+          mergeTestResults: false
+          testRunTitle: TFLint Scan
+          failTaskOnFailedTests: false
+          publishRunAttachments: true 
+  - stage: terratest
+    displayName: "Terratest | Unit Testing"
+    # Only run during Pull Request
+    condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
+    jobs:
+      - job: terratest_job
+        steps:
+          - bash: |
+              set -e
+              cd test
+              go test -timeout 45m
+            env:
+              ARM_CLIENT_ID: $(variables.ARM_CLIENT_ID)
+              ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)
+              ARM_SUBSCRIPTION_ID: $(variables.ARM_SUBSCRIPTION_ID)
+              ARM_TENANT_ID: $(variables.ARM_TENANT_ID)
+  - stage: pr_completion
+    displayName: "Tag Release"
+    # Runs when Pull Request is complete and merged into main branch.
+    # Requires special permissions - https://docs.microsoft.com/en-us/azure/devops/organizations/security/permissions?view=azure-devops&tabs=preview-page#service-accounts
+    condition: eq(variables.isMain, 'true')
+    jobs:
+      - job: add_tag
+        displayName: Create Tag
+        steps:
+        - checkout: self
+          persistCredentials: true
+        # use $(Build.BuildNumber) to tag main branch when the PR is completed.
+        - bash: |
+            git config --global user.name "Project Collection Build Service"
+            git config --global user.email "ProjectCollectionBuildService@dev.azure.com"
+            git tag -a $BUILD_BUILDNUMBER -m "Tagged by workflow $BUILD_DEFINITIONNAME"
+            git push origin $BUILD_BUILDNUMBER        
+          workingDirectory: $(System.DefaultWorkingDirectory)     
+          displayName: 'Create Tag'
