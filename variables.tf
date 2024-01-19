@@ -5,7 +5,7 @@ variable "resource_types" {
 
 variable "name_components" {
   type        = list(string)
-  description = "The components of the names.  Each compoent will be replaced with a value from one of the variables.  See the readme for further details.  The default value aligns with SRS naming conventions."
+  description = "The components of the names.  Each compoent will be replaced with a value from one of the variables.  See the readme for further details.  The default value aligns with ORG naming conventions."
   default     = ["ResourceType", "ProjAppSvc", "Environment", "Location", "Instance"]
 }
 
@@ -34,7 +34,7 @@ variable "appname" {
 variable "organization" {
   type        = string
   description = "The value to replace the 'Org' name components with."
-  default     = "srs"
+  default     = "org" # This is the default value used by the ORG naming convention.  Change this to match your naming convention.
 }
 
 variable "instances" {

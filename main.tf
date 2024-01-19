@@ -26,7 +26,7 @@ module "special_names" {
   environment     = var.environment
   organization    = var.organization
   location        = var.location
-  proj_app_or_svc = "srs${var.appname}" #srs is the identifier used to make certain resource types more likely to be globally unique.
+  proj_app_or_svc = "org${var.appname}" #org is the identifier used to make certain resource types more likely to be globally unique.
   unit_or_dept    = null
   instance        = each.key
 

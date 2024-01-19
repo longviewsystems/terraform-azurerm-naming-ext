@@ -1,5 +1,5 @@
 # Overview
-This module canbe used to simplify Azure Resource naming.  Following the naming convention can be error prone, and time consuming.  This module outputs names that conform with the SRS naming requirements.  
+This module canbe used to simplify Azure Resource naming.  Following the naming convention can be error prone, and time consuming.  This module outputs names that conform with the ORG naming requirements.  
 
 Note: There are some limitations and so names should be double checked.
 
@@ -21,8 +21,8 @@ Features:
 These name components align with the [Azure Naming Tool](https://github.com/microsoft/CloudAdoptionFramework/tree/master/ready/AzNamingTool) which is part of the Azure Cloud Adoption Framework list of [tools](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/resources/tools-templates).  The Azure Naming Tool is very useful for generating full naming conventions.
 
 # Notes
-* Some resources need to be globally unique, and common names are used by other organizations and so naming collisions are common.  To avoid this scenario, certain resource types have a special SRS specific identifier added.  These resource types are output from the **special_instances output**, and not from the **instances**.
-  * Identifier: srs
+* Some resources need to be globally unique, and common names are used by other organizations and so naming collisions are common.  To avoid this scenario, certain resource types have a special ORG specific identifier added.  These resource types are output from the **special_instances output**, and not from the **instances**.
+  * Identifier: org
   * Specially handled resources
     * azurerm_storage_account
 
@@ -41,7 +41,7 @@ These name components align with the [Azure Naming Tool](https://github.com/micr
 ```hcl
 
 module "test_one" {
-  source          = source = "git::https://dev.azure.com/srscloud/Azure%20Infrastructure/_git/terraform-azurerm-naming"
+  source          = source = "git::https://lvs1code.visualstudio.com/CloudManagementPlatform/_git/terraform-azurerm-naming"
   resource_types  = ["general", "azurerm_resource_group", "azurerm_app_service", "azurerm_storage_account", "azurerm_key_vault", "azurerm_network_security_group", "azurerm_virtual_network", "azurerm_subnet"]
   environment     = "mgt"
   location        = "scus"
@@ -73,7 +73,7 @@ test_one_app_service_output = {
     "01" = {
       "debug" = null /* object */
       "names" = tomap({
-        "azurerm_storage_account" = "stsrspamgtscus01"
+        "azurerm_storage_account" = "storgpamgtscus01"
       })
     }
   }
@@ -113,8 +113,8 @@ No resources.
 | <a name="input_environment"></a> [environment](#input\_environment) | The value to replace the 'Environment' name components with.  Acceptable locations are con, idt, mgt, prd, tst, dev, shd. | `string` | `"dev"` | no |
 | <a name="input_instances"></a> [instances](#input\_instances) | The values to replace the 'Instance' name components with. | `list(string)` | <pre>[<br>  "01"<br>]</pre> | no |
 | <a name="input_location"></a> [location](#input\_location) | The value to replace the 'Location' name components with.  Acceptable locations are scus, ncus, and glb. | `string` | `"scus"` | no |
-| <a name="input_name_components"></a> [name\_components](#input\_name\_components) | The components of the names.  Each compoent will be replaced with a value from one of the variables.  See the readme for further details.  The default value aligns with SRS naming conventions. | `list(string)` | <pre>[<br>  "ResourceType",<br>  "ProjAppSvc",<br>  "Environment",<br>  "Location",<br>  "Instance"<br>]</pre> | no |
-| <a name="input_organization"></a> [organization](#input\_organization) | The value to replace the 'Org' name components with. | `string` | `"srs"` | no |
+| <a name="input_name_components"></a> [name\_components](#input\_name\_components) | The components of the names.  Each compoent will be replaced with a value from one of the variables.  See the readme for further details.  The default value aligns with ORG naming conventions. | `list(string)` | <pre>[<br>  "ResourceType",<br>  "ProjAppSvc",<br>  "Environment",<br>  "Location",<br>  "Instance"<br>]</pre> | no |
+| <a name="input_organization"></a> [organization](#input\_organization) | The value to replace the 'Org' name components with. | `string` | `"org"` | no |
 | <a name="input_resource_types"></a> [resource\_types](#input\_resource\_types) | A list of resource type(s) that should be generated (output) using the same settings. Pick from this list: https://registry.terraform.io/providers/aztfmod/azurecaf/latest/docs/resources/azurecaf_name#resource-types | `list(string)` | n/a | yes |
 
 ## Outputs
