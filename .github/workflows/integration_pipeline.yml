@@ -12,7 +12,7 @@ on:
 
     defaults:
       run:
-        shell: bash # use bash shell regardless of the type of Github Actions runner
+        shell: bash # use bash shell regardless of the type of Github Actions runner.
 permissions: read-all
 jobs:
   checkov-tests:
