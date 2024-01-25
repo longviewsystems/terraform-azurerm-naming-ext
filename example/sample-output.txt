@@ -1,0 +1,821 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+
+# module.test_three.module.names["01"].azurecaf_name.naming will be created
+  + resource "azurecaf_name" "naming" {
+      + clean_input    = true
+      + id             = (known after apply)
+      + passthrough    = false
+      + prefixes       = []
+      + random_length  = 0
+      + resource_types = [
+          + "azurerm_app_service",
+          + "azurerm_firewall",
+          + "azurerm_key_vault",
+          + "azurerm_network_security_group",
+          + "azurerm_network_watcher",
+          + "azurerm_resource_group",
+          + "azurerm_subnet",
+          + "azurerm_virtual_network",
+          + "azurerm_virtual_network_gateway",
+          + "general",
+        ]
+      + result         = (known after apply)
+      + results        = (known after apply)
+      + separator      = "-"
+      + suffixes       = [
+          + "ad",
+          + "idt",
+          + "scus",
+          + "01",
+        ]
+      + use_slug       = true
+    }
+
+  # module.test_three.module.names["01"].random_string.random will be created
+  + resource "random_string" "random" {
+      + id          = (known after apply)
+      + length      = 4
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = false
+      + numeric     = false
+      + result      = (known after apply)
+      + special     = false
+      + upper       = false
+    }
+
+  # module.test_three.module.names["02"].azurecaf_name.naming will be created
+  + resource "azurecaf_name" "naming" {
+      + clean_input    = true
+      + id             = (known after apply)
+      + passthrough    = false
+      + prefixes       = []
+      + random_length  = 0
+      + resource_types = [
+          + "azurerm_app_service",
+          + "azurerm_firewall",
+          + "azurerm_key_vault",
+          + "azurerm_network_security_group",
+          + "azurerm_network_watcher",
+          + "azurerm_resource_group",
+          + "azurerm_subnet",
+          + "azurerm_virtual_network",
+          + "azurerm_virtual_network_gateway",
+          + "general",
+        ]
+      + result         = (known after apply)
+      + results        = (known after apply)
+      + separator      = "-"
+      + suffixes       = [
+          + "ad",
+          + "idt",
+          + "scus",
+          + "02",
+        ]
+      + use_slug       = true
+    }
+
+  # module.test_three.module.names["02"].random_string.random will be created
+  + resource "random_string" "random" {
+      + id          = (known after apply)
+      + length      = 4
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = false
+      + numeric     = false
+      + result      = (known after apply)
+      + special     = false
+      + upper       = false
+    }
+
+  # module.test_three.module.names["03"].azurecaf_name.naming will be created
+  + resource "azurecaf_name" "naming" {
+      + clean_input    = true
+      + id             = (known after apply)
+      + passthrough    = false
+      + prefixes       = []
+      + random_length  = 0
+      + resource_types = [
+          + "azurerm_app_service",
+          + "azurerm_firewall",
+          + "azurerm_key_vault",
+          + "azurerm_network_security_group",
+          + "azurerm_network_watcher",
+          + "azurerm_resource_group",
+          + "azurerm_subnet",
+          + "azurerm_virtual_network",
+          + "azurerm_virtual_network_gateway",
+          + "general",
+        ]
+      + result         = (known after apply)
+      + results        = (known after apply)
+      + separator      = "-"
+      + suffixes       = [
+          + "ad",
+          + "idt",
+          + "scus",
+          + "03",
+        ]
+      + use_slug       = true
+    }
+
+  # module.test_three.module.names["03"].random_string.random will be created
+  + resource "random_string" "random" {
+      + id          = (known after apply)
+      + length      = 4
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = false
+      + numeric     = false
+      + result      = (known after apply)
+      + special     = false
+      + upper       = false
+    }
+
+  # module.test_three.module.special_names["01"].azurecaf_name.naming will be created
+  + resource "azurecaf_name" "naming" {
+      + clean_input    = true
+      + id             = (known after apply)
+      + passthrough    = false
+      + prefixes       = []
+      + random_length  = 0
+      + resource_types = [
+          + "azurerm_storage_account",
+        ]
+      + result         = (known after apply)
+      + results        = (known after apply)
+      + separator      = "-"
+      + suffixes       = [
+          + "orgad",
+          + "idt",
+          + "scus",
+          + "01",
+        ]
+      + use_slug       = true
+    }
+
+  # module.test_three.module.special_names["01"].random_string.random will be created
+  + resource "random_string" "random" {
+      + id          = (known after apply)
+      + length      = 4
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = false
+      + numeric     = false
+      + result      = (known after apply)
+      + special     = false
+      + upper       = false
+    }
+
+  # module.test_three.module.special_names["02"].azurecaf_name.naming will be created
+  + resource "azurecaf_name" "naming" {
+      + clean_input    = true
+      + id             = (known after apply)
+      + passthrough    = false
+      + prefixes       = []
+      + random_length  = 0
+      + resource_types = [
+          + "azurerm_storage_account",
+        ]
+      + result         = (known after apply)
+      + results        = (known after apply)
+      + separator      = "-"
+      + suffixes       = [
+          + "orgad",
+          + "idt",
+          + "scus",
+          + "02",
+        ]
+      + use_slug       = true
+    }
+
+  # module.test_three.module.special_names["02"].random_string.random will be created
+  + resource "random_string" "random" {
+      + id          = (known after apply)
+      + length      = 4
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = false
+      + numeric     = false
+      + result      = (known after apply)
+      + special     = false
+      + upper       = false
+    }
+
+  # module.test_three.module.special_names["03"].azurecaf_name.naming will be created
+  + resource "azurecaf_name" "naming" {
+      + clean_input    = true
+      + id             = (known after apply)
+      + passthrough    = false
+      + prefixes       = []
+      + random_length  = 0
+      + resource_types = [
+          + "azurerm_storage_account",
+        ]
+      + result         = (known after apply)
+      + results        = (known after apply)
+      + separator      = "-"
+      + suffixes       = [
+          + "orgad",
+          + "idt",
+          + "scus",
+          + "03",
+        ]
+      + use_slug       = true
+    }
+
+  # module.test_three.module.special_names["03"].random_string.random will be created
+  + resource "random_string" "random" {
+      + id          = (known after apply)
+      + length      = 4
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = false
+      + numeric     = false
+      + result      = (known after apply)
+      + special     = false
+      + upper       = false
+    }
+
+  # module.test_two.module.names["01"].azurecaf_name.naming will be created
+  + resource "azurecaf_name" "naming" {
+      + clean_input    = true
+      + id             = (known after apply)
+      + passthrough    = false
+      + prefixes       = []
+      + random_length  = 0
+      + resource_types = [
+          + "azurerm_app_service",
+          + "azurerm_firewall",
+          + "azurerm_key_vault",
+          + "azurerm_network_security_group",
+          + "azurerm_network_watcher",
+          + "azurerm_resource_group",
+          + "azurerm_subnet",
+          + "azurerm_virtual_network",
+          + "azurerm_virtual_network_gateway",
+          + "general",
+        ]
+      + result         = (known after apply)
+      + results        = (known after apply)
+      + separator      = "-"
+      + suffixes       = [
+          + "rh",
+          + "prd",
+          + "ncus",
+          + "01",
+        ]
+      + use_slug       = true
+    }
+
+  # module.test_two.module.names["01"].random_string.random will be created
+  + resource "random_string" "random" {
+      + id          = (known after apply)
+      + length      = 4
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = false
+      + numeric     = false
+      + result      = (known after apply)
+      + special     = false
+      + upper       = false
+    }
+
+  # module.test_two.module.names["02"].azurecaf_name.naming will be created
+  + resource "azurecaf_name" "naming" {
+      + clean_input    = true
+      + id             = (known after apply)
+      + passthrough    = false
+      + prefixes       = []
+      + random_length  = 0
+      + resource_types = [
+          + "azurerm_app_service",
+          + "azurerm_firewall",
+          + "azurerm_key_vault",
+          + "azurerm_network_security_group",
+          + "azurerm_network_watcher",
+          + "azurerm_resource_group",
+          + "azurerm_subnet",
+          + "azurerm_virtual_network",
+          + "azurerm_virtual_network_gateway",
+          + "general",
+        ]
+      + result         = (known after apply)
+      + results        = (known after apply)
+      + separator      = "-"
+      + suffixes       = [
+          + "rh",
+          + "prd",
+          + "ncus",
+          + "02",
+        ]
+      + use_slug       = true
+    }
+
+  # module.test_two.module.names["02"].random_string.random will be created
+  + resource "random_string" "random" {
+      + id          = (known after apply)
+      + length      = 4
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = false
+      + numeric     = false
+      + result      = (known after apply)
+      + special     = false
+      + upper       = false
+    }
+
+  # module.test_two.module.names["03"].azurecaf_name.naming will be created
+  + resource "azurecaf_name" "naming" {
+      + clean_input    = true
+      + id             = (known after apply)
+      + passthrough    = false
+      + prefixes       = []
+      + random_length  = 0
+      + resource_types = [
+          + "azurerm_app_service",
+          + "azurerm_firewall",
+          + "azurerm_key_vault",
+          + "azurerm_network_security_group",
+          + "azurerm_network_watcher",
+          + "azurerm_resource_group",
+          + "azurerm_subnet",
+          + "azurerm_virtual_network",
+          + "azurerm_virtual_network_gateway",
+          + "general",
+        ]
+      + result         = (known after apply)
+      + results        = (known after apply)
+      + separator      = "-"
+      + suffixes       = [
+          + "rh",
+          + "prd",
+          + "ncus",
+          + "03",
+        ]
+      + use_slug       = true
+    }
+
+  # module.test_two.module.names["03"].random_string.random will be created
+  + resource "random_string" "random" {
+      + id          = (known after apply)
+      + length      = 4
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = false
+      + numeric     = false
+      + result      = (known after apply)
+      + special     = false
+      + upper       = false
+    }
+
+  # module.test_two.module.special_names["01"].azurecaf_name.naming will be created
+  + resource "azurecaf_name" "naming" {
+      + clean_input    = true
+      + id             = (known after apply)
+      + passthrough    = false
+      + prefixes       = []
+      + random_length  = 0
+      + resource_types = [
+          + "azurerm_storage_account",
+        ]
+      + result         = (known after apply)
+      + results        = (known after apply)
+      + separator      = "-"
+      + suffixes       = [
+          + "orgrh",
+          + "prd",
+          + "ncus",
+          + "01",
+        ]
+      + use_slug       = true
+    }
+
+  # module.test_two.module.special_names["01"].random_string.random will be created
+  + resource "random_string" "random" {
+      + id          = (known after apply)
+      + length      = 4
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = false
+      + numeric     = false
+      + result      = (known after apply)
+      + special     = false
+      + upper       = false
+    }
+
+  # module.test_two.module.special_names["02"].azurecaf_name.naming will be created
+  + resource "azurecaf_name" "naming" {
+      + clean_input    = true
+      + id             = (known after apply)
+      + passthrough    = false
+      + prefixes       = []
+      + random_length  = 0
+      + resource_types = [
+          + "azurerm_storage_account",
+        ]
+      + result         = (known after apply)
+      + results        = (known after apply)
+      + separator      = "-"
+      + suffixes       = [
+          + "orgrh",
+          + "prd",
+          + "ncus",
+          + "02",
+        ]
+      + use_slug       = true
+    }
+
+  # module.test_two.module.special_names["02"].random_string.random will be created
+  + resource "random_string" "random" {
+      + id          = (known after apply)
+      + length      = 4
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = false
+      + numeric     = false
+      + result      = (known after apply)
+      + special     = false
+      + upper       = false
+    }
+
+  # module.test_two.module.special_names["03"].azurecaf_name.naming will be created
+  + resource "azurecaf_name" "naming" {
+      + clean_input    = true
+      + id             = (known after apply)
+      + passthrough    = false
+      + prefixes       = []
+      + random_length  = 0
+      + resource_types = [
+          + "azurerm_storage_account",
+        ]
+      + result         = (known after apply)
+      + results        = (known after apply)
+      + separator      = "-"
+      + suffixes       = [
+          + "orgrh",
+          + "prd",
+          + "ncus",
+          + "03",
+        ]
+      + use_slug       = true
+    }
+
+  # module.test_two.module.special_names["03"].random_string.random will be created
+  + resource "random_string" "random" {
+      + id          = (known after apply)
+      + length      = 4
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = false
+      + numeric     = false
+      + result      = (known after apply)
+      + special     = false
+      + upper       = false
+    }
+
+Plan: 76 to add, 0 to change, 0 to destroy.
+
+Outputs:
+
+test_one_app_service = "app-pa-mgt-scus-01"
+test_one_app_service_output = {
+  "instances" = {
+    "01" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_app_service" = "app-pa-mgt-scus-01"
+        "azurerm_firewall" = "fw-pa-mgt-scus-01"
+        "azurerm_key_vault" = "kv-pa-mgt-scus-01"
+        "azurerm_network_security_group" = "nsg-pa-mgt-scus-01"
+        "azurerm_network_watcher" = "nw-pa-mgt-scus-01"
+        "azurerm_resource_group" = "rg-pa-mgt-scus-01"
+        "azurerm_subnet" = "snet-pa-mgt-scus-01"
+        "azurerm_virtual_network" = "vnet-pa-mgt-scus-01"
+        "azurerm_virtual_network_gateway" = "vgw-pa-mgt-scus-01"
+        "general" = "pa-mgt-scus-01"
+      })
+    }
+    "02" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_app_service" = "app-pa-mgt-scus-02"
+        "azurerm_firewall" = "fw-pa-mgt-scus-02"
+        "azurerm_key_vault" = "kv-pa-mgt-scus-02"
+        "azurerm_network_security_group" = "nsg-pa-mgt-scus-02"
+        "azurerm_network_watcher" = "nw-pa-mgt-scus-02"
+        "azurerm_resource_group" = "rg-pa-mgt-scus-02"
+        "azurerm_subnet" = "snet-pa-mgt-scus-02"
+        "azurerm_virtual_network" = "vnet-pa-mgt-scus-02"
+        "azurerm_virtual_network_gateway" = "vgw-pa-mgt-scus-02"
+        "general" = "pa-mgt-scus-02"
+      })
+    }
+    "03" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_app_service" = "app-pa-mgt-scus-03"
+        "azurerm_firewall" = "fw-pa-mgt-scus-03"
+        "azurerm_key_vault" = "kv-pa-mgt-scus-03"
+        "azurerm_network_security_group" = "nsg-pa-mgt-scus-03"
+        "azurerm_network_watcher" = "nw-pa-mgt-scus-03"
+        "azurerm_resource_group" = "rg-pa-mgt-scus-03"
+        "azurerm_subnet" = "snet-pa-mgt-scus-03"
+        "azurerm_virtual_network" = "vnet-pa-mgt-scus-03"
+        "azurerm_virtual_network_gateway" = "vgw-pa-mgt-scus-03"
+        "general" = "pa-mgt-scus-03"
+      })
+    }
+    "04" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_app_service" = "app-pa-mgt-scus-04"
+        "azurerm_firewall" = "fw-pa-mgt-scus-04"
+        "azurerm_key_vault" = "kv-pa-mgt-scus-04"
+        "azurerm_network_security_group" = "nsg-pa-mgt-scus-04"
+        "azurerm_network_watcher" = "nw-pa-mgt-scus-04"
+        "azurerm_resource_group" = "rg-pa-mgt-scus-04"
+        "azurerm_subnet" = "snet-pa-mgt-scus-04"
+        "azurerm_virtual_network" = "vnet-pa-mgt-scus-04"
+        "azurerm_virtual_network_gateway" = "vgw-pa-mgt-scus-04"
+        "general" = "pa-mgt-scus-04"
+      })
+    }
+    "05" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_app_service" = "app-pa-mgt-scus-05"
+        "azurerm_firewall" = "fw-pa-mgt-scus-05"
+        "azurerm_key_vault" = "kv-pa-mgt-scus-05"
+        "azurerm_network_security_group" = "nsg-pa-mgt-scus-05"
+        "azurerm_network_watcher" = "nw-pa-mgt-scus-05"
+        "azurerm_resource_group" = "rg-pa-mgt-scus-05"
+        "azurerm_subnet" = "snet-pa-mgt-scus-05"
+        "azurerm_virtual_network" = "vnet-pa-mgt-scus-05"
+        "azurerm_virtual_network_gateway" = "vgw-pa-mgt-scus-05"
+        "general" = "pa-mgt-scus-05"
+      })
+    }
+    "06" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_app_service" = "app-pa-mgt-scus-06"
+        "azurerm_firewall" = "fw-pa-mgt-scus-06"
+        "azurerm_key_vault" = "kv-pa-mgt-scus-06"
+        "azurerm_network_security_group" = "nsg-pa-mgt-scus-06"
+        "azurerm_network_watcher" = "nw-pa-mgt-scus-06"
+        "azurerm_resource_group" = "rg-pa-mgt-scus-06"
+        "azurerm_subnet" = "snet-pa-mgt-scus-06"
+        "azurerm_virtual_network" = "vnet-pa-mgt-scus-06"
+        "azurerm_virtual_network_gateway" = "vgw-pa-mgt-scus-06"
+        "general" = "pa-mgt-scus-06"
+      })
+    }
+    "07" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_app_service" = "app-pa-mgt-scus-07"
+        "azurerm_firewall" = "fw-pa-mgt-scus-07"
+        "azurerm_key_vault" = "kv-pa-mgt-scus-07"
+        "azurerm_network_security_group" = "nsg-pa-mgt-scus-07"
+        "azurerm_network_watcher" = "nw-pa-mgt-scus-07"
+        "azurerm_resource_group" = "rg-pa-mgt-scus-07"
+        "azurerm_subnet" = "snet-pa-mgt-scus-07"
+        "azurerm_virtual_network" = "vnet-pa-mgt-scus-07"
+        "azurerm_virtual_network_gateway" = "vgw-pa-mgt-scus-07"
+        "general" = "pa-mgt-scus-07"
+      })
+    }
+    "08" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_app_service" = "app-pa-mgt-scus-08"
+        "azurerm_firewall" = "fw-pa-mgt-scus-08"
+        "azurerm_key_vault" = "kv-pa-mgt-scus-08"
+        "azurerm_network_security_group" = "nsg-pa-mgt-scus-08"
+        "azurerm_network_watcher" = "nw-pa-mgt-scus-08"
+        "azurerm_resource_group" = "rg-pa-mgt-scus-08"
+        "azurerm_subnet" = "snet-pa-mgt-scus-08"
+        "azurerm_virtual_network" = "vnet-pa-mgt-scus-08"
+        "azurerm_virtual_network_gateway" = "vgw-pa-mgt-scus-08"
+        "general" = "pa-mgt-scus-08"
+      })
+    }
+    "09" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_app_service" = "app-pa-mgt-scus-09"
+        "azurerm_firewall" = "fw-pa-mgt-scus-09"
+        "azurerm_key_vault" = "kv-pa-mgt-scus-09"
+        "azurerm_network_security_group" = "nsg-pa-mgt-scus-09"
+        "azurerm_network_watcher" = "nw-pa-mgt-scus-09"
+        "azurerm_resource_group" = "rg-pa-mgt-scus-09"
+        "azurerm_subnet" = "snet-pa-mgt-scus-09"
+        "azurerm_virtual_network" = "vnet-pa-mgt-scus-09"
+        "azurerm_virtual_network_gateway" = "vgw-pa-mgt-scus-09"
+        "general" = "pa-mgt-scus-09"
+      })
+    }
+    "10" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_app_service" = "app-pa-mgt-scus-10"
+        "azurerm_firewall" = "fw-pa-mgt-scus-10"
+        "azurerm_key_vault" = "kv-pa-mgt-scus-10"
+        "azurerm_network_security_group" = "nsg-pa-mgt-scus-10"
+        "azurerm_network_watcher" = "nw-pa-mgt-scus-10"
+        "azurerm_resource_group" = "rg-pa-mgt-scus-10"
+        "azurerm_subnet" = "snet-pa-mgt-scus-10"
+        "azurerm_virtual_network" = "vnet-pa-mgt-scus-10"
+        "azurerm_virtual_network_gateway" = "vgw-pa-mgt-scus-10"
+        "general" = "pa-mgt-scus-10"
+      })
+    }
+  }
+  "special_instances" = {
+    "01" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_storage_account" = "storgpamgtscus01"
+      })
+    }
+    "02" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_storage_account" = "storgpamgtscus02"
+      })
+    }
+    "03" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_storage_account" = "storgpamgtscus03"
+      })
+    }
+    "04" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_storage_account" = "storgpamgtscus04"
+      })
+    }
+    "05" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_storage_account" = "storgpamgtscus05"
+      })
+    }
+    "06" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_storage_account" = "storgpamgtscus06"
+      })
+    }
+    "07" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_storage_account" = "storgpamgtscus07"
+      })
+    }
+    "08" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_storage_account" = "storgpamgtscus08"
+      })
+    }
+    "09" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_storage_account" = "storgpamgtscus09"
+      })
+    }
+    "10" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_storage_account" = "storgpamgtscus10"
+      })
+    }
+  }
+}
+test_one_rg = "rg-pa-mgt-scus-01"
+test_one_storage_account = "storgpamgtscus01"
+test_one_subnet = "snet-pa-mgt-scus-01"
+test_one_virtual_network = "vnet-pa-mgt-scus-03"
+test_three_rg = "rg-ad-idt-scus-01"
+test_two_app_service = "app-rh-prd-ncus-02"
+test_two_random_app_service = "app-rh-prd-ncus-02-gbsn"
+test_two_random_app_service_output = {
+  "instances" = {
+    "01" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_app_service" = "app-rh-prd-ncus-01-enhd"
+        "azurerm_firewall" = "fw-rh-prd-ncus-01-enhd"
+        "azurerm_key_vault" = "kv-rh-prd-ncus-01-enhd"
+        "azurerm_network_security_group" = "nsg-rh-prd-ncus-01-enhd"
+        "azurerm_network_watcher" = "nw-rh-prd-ncus-01-enhd"
+        "azurerm_resource_group" = "rg-rh-prd-ncus-01-enhd"
+        "azurerm_subnet" = "snet-rh-prd-ncus-01-enhd"
+        "azurerm_virtual_network" = "vnet-rh-prd-ncus-01-enhd"
+        "azurerm_virtual_network_gateway" = "vgw-rh-prd-ncus-01-enhd"
+        "general" = "rh-prd-ncus-01-enhd"
+      })
+    }
+    "02" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_app_service" = "app-rh-prd-ncus-02-gbsn"
+        "azurerm_firewall" = "fw-rh-prd-ncus-02-gbsn"
+        "azurerm_key_vault" = "kv-rh-prd-ncus-02-gbsn"
+        "azurerm_network_security_group" = "nsg-rh-prd-ncus-02-gbsn"
+        "azurerm_network_watcher" = "nw-rh-prd-ncus-02-gbsn"
+        "azurerm_resource_group" = "rg-rh-prd-ncus-02-gbsn"
+        "azurerm_subnet" = "snet-rh-prd-ncus-02-gbsn"
+        "azurerm_virtual_network" = "vnet-rh-prd-ncus-02-gbsn"
+        "azurerm_virtual_network_gateway" = "vgw-rh-prd-ncus-02-gbsn"
+        "general" = "rh-prd-ncus-02-gbsn"
+      })
+    }
+    "03" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_app_service" = "app-rh-prd-ncus-03-dylc"
+        "azurerm_firewall" = "fw-rh-prd-ncus-03-dylc"
+        "azurerm_key_vault" = "kv-rh-prd-ncus-03-dylc"
+        "azurerm_network_security_group" = "nsg-rh-prd-ncus-03-dylc"
+        "azurerm_network_watcher" = "nw-rh-prd-ncus-03-dylc"
+        "azurerm_resource_group" = "rg-rh-prd-ncus-03-dylc"
+        "azurerm_subnet" = "snet-rh-prd-ncus-03-dylc"
+        "azurerm_virtual_network" = "vnet-rh-prd-ncus-03-dylc"
+        "azurerm_virtual_network_gateway" = "vgw-rh-prd-ncus-03-dylc"
+        "general" = "rh-prd-ncus-03-dylc"
+      })
+    }
+  }
+  "special_instances" = {
+    "01" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_storage_account" = "storgrhprdncus01iiug"
+      })
+    }
+    "02" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_storage_account" = "storgrhprdncus02zzvr"
+      })
+    }
+    "03" = {
+      "debug" = null /* object */
+      "names" = tomap({
+        "azurerm_storage_account" = "storgrhprdncus03kdrv"
+      })
+    }
+  }
+}
+test_two_random_rg = "rg-rh-prd-ncus-02-gbsn"
+test_two_random_storage_account = "storgrhprdncus02zzvr"
+test_two_random_virtual_network = "vnet-rh-prd-ncus-02-gbsn"
+test_two_storage_account = "storgrhprdncus02"
+test_two_subnet = "snet-rh-prd-ncus-02"
+test_two_virtual_network = "vnet-rh-prd-ncus-02"
