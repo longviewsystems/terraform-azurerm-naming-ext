@@ -17,13 +17,7 @@ variable "environment" {
 
 variable "location" {
   type        = string
-  description = "The value to replace the 'Location' name components with.  Acceptable locations are scus, ncus, and glb."
-  default     = "scus"
-
-  validation {
-    condition     = contains(["scus", "ncus", "glb"], var.location)
-    error_message = "Acceptable locations are scus, ncus, and glb."
-  }
+  description = "The value to replace the 'Location' name components with."
 }
 
 variable "appname" {
