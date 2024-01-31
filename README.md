@@ -5,8 +5,8 @@ Note: There are some limitations and so names should be double checked.
 
 Features:
 * Generates a list of resource names by type (e.g. Virtual Wan name vwan-rog-mtx-dev-wu-01)
-* Location and environment are validated, and only accept pre-defined architecturally acceptable values.
-  * For example, the location variable can only be set to "scus", "ncus", "glb".
+* If the a full location name is passed that matches the Geo-code mapping, then the location name will be replaced with the Geo-code.
+  * Geo-codes are defined in ./locals.geo_codes.tf.json, which is derived from the [Microsoft Geo-Code mapping](https://learn.microsoft.com/en-us/azure/backup/scripts/geo-code-list#mapping-details).
 * Names are output for use in larger Terraform projects.
 * Names are truncated based on the length the Resource Type supports.
 * Names are validated against allowed Azure naming values.
@@ -30,7 +30,7 @@ These name components align with the [Azure Naming Tool](https://github.com/micr
 
 * If names are too long for the requested resource type, then they will be truncated.  
   * This issue can happen when the variable appname is too long, and/or then enable_random_name_component is true.
-  * Certain Resource types (e.g. Virtual Machines) support very short names, and the naming convention will be truncated to the length of the Resource Type.  This may remove naming components that are important.  
+  * Certain Resource types (e.g. Virtual Machines) support very short names, and the naming convention will be truncated to the length of the Resource Type.  This may remove naming components that are important.
 * Maintaining the list of resources is challenging and requires a lot of manual work.  In some cases the names produced by this module may not match the [Azure Naming Tool](https://github.com/microsoft/CloudAdoptionFramework/tree/master/ready/AzNamingTool).  Names should be double checked.
 
 

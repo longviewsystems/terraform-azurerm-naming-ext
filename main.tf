@@ -7,7 +7,7 @@ module "names" {
   name_components = var.name_components
   environment     = var.environment
   organization    = var.organization
-  location        = var.location
+  location        = local.geo_code_name
   proj_app_or_svc = var.appname
   unit_or_dept    = null
   instance        = each.key
@@ -25,7 +25,7 @@ module "special_names" {
   name_components = var.name_components
   environment     = var.environment
   organization    = var.organization
-  location        = var.location
+  location        = local.geo_code_name
   proj_app_or_svc = "org${var.appname}" #org is the identifier used to make certain resource types more likely to be globally unique.
   unit_or_dept    = null
   instance        = each.key
