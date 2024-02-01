@@ -5,8 +5,8 @@ Note: There are some limitations and so names should be double checked.
 
 Features:
 * Generates a list of resource names by type (e.g. Virtual Wan name vwan-rog-mtx-dev-wu-01)
-* Location and environment are validated, and only accept pre-defined architecturally acceptable values.
-  * For example, the location variable can only be set to "scus", "ncus", "glb".
+* If the a full location name is passed that matches the Geo-code mapping, then the location name will be replaced with the Geo-code.
+  * Geo-codes are defined in ./locals.geo_codes.tf.json, which is derived from the [Microsoft Geo-Code mapping](https://learn.microsoft.com/en-us/azure/backup/scripts/geo-code-list#mapping-details).
 * Names are output for use in larger Terraform projects.
 * Names are truncated based on the length the Resource Type supports.
 * Names are validated against allowed Azure naming values.
@@ -30,7 +30,7 @@ These name components align with the [Azure Naming Tool](https://github.com/micr
 
 * If names are too long for the requested resource type, then they will be truncated.  
   * This issue can happen when the variable appname is too long, and/or then enable_random_name_component is true.
-  * Certain Resource types (e.g. Virtual Machines) support very short names, and the naming convention will be truncated to the length of the Resource Type.  This may remove naming components that are important.  
+  * Certain Resource types (e.g. Virtual Machines) support very short names, and the naming convention will be truncated to the length of the Resource Type.  This may remove naming components that are important.
 * Maintaining the list of resources is challenging and requires a lot of manual work.  In some cases the names produced by this module may not match the [Azure Naming Tool](https://github.com/microsoft/CloudAdoptionFramework/tree/master/ready/AzNamingTool).  Names should be double checked.
 
 
@@ -112,7 +112,7 @@ No resources.
 | <a name="input_enable_random_name_component"></a> [enable\_random\_name\_component](#input\_enable\_random\_name\_component) | Add a random name component. | `bool` | `false` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | The value to replace the 'Environment' name components with.  Acceptable locations are con, idt, mgt, prd, tst, dev, shd. | `string` | `"dev"` | no |
 | <a name="input_instances"></a> [instances](#input\_instances) | The values to replace the 'Instance' name components with. | `list(string)` | <pre>[<br>  "01"<br>]</pre> | no |
-| <a name="input_location"></a> [location](#input\_location) | The value to replace the 'Location' name components with.  Acceptable locations are scus, ncus, and glb. | `string` | `"scus"` | no |
+| <a name="input_location"></a> [location](#input\_location) | The value to replace the 'Location' name components with.  If the full location is used, it will be abreviated to a 3 or 4 letter code defined in locals.geo\_codes.tf.json. | `string` | n/a | yes |
 | <a name="input_name_components"></a> [name\_components](#input\_name\_components) | The components of the names.  Each compoent will be replaced with a value from one of the variables.  See the readme for further details.  The default value aligns with ORG naming conventions. | `list(string)` | <pre>[<br>  "ResourceType",<br>  "ProjAppSvc",<br>  "Environment",<br>  "Location",<br>  "Instance"<br>]</pre> | no |
 | <a name="input_organization"></a> [organization](#input\_organization) | The value to replace the 'Org' name components with. | `string` | `"org"` | no |
 | <a name="input_resource_types"></a> [resource\_types](#input\_resource\_types) | A list of resource type(s) that should be generated (output) using the same settings. Pick from this list: https://registry.terraform.io/providers/aztfmod/azurecaf/latest/docs/resources/azurecaf_name#resource-types | `list(string)` | n/a | yes |

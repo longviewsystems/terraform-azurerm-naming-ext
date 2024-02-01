@@ -17,13 +17,7 @@ variable "environment" {
 
 variable "location" {
   type        = string
-  description = "The value to replace the 'Location' name components with.  Acceptable locations are scus, ncus, and glb."
-  default     = "scus"
-
-  validation {
-    condition     = contains(["scus", "ncus", "glb"], var.location)
-    error_message = "Acceptable locations are scus, ncus, and glb."
-  }
+  description = "The value to replace the 'Location' name components with.  If the full location is used, it will be abreviated to a 3 or 4 letter code defined in locals.geo_codes.tf.json."
 }
 
 variable "appname" {

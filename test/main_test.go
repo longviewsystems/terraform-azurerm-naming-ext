@@ -23,20 +23,20 @@ func TestTerraformAzDoAgent(t *testing.T) {
 	//**********************************
 
 	output := terraform.Output(t, options, "test_one_app_service")
-	assert.Equal(t, "app-pa-mgt-scus-01", output)
+	assert.Equal(t, "app-pa-mgmt-scus-01", output)
 
 	output = terraform.Output(t, options, "test_one_storage_account")
-	assert.Equal(t, "storgpamgtscus01", output)
+	assert.Equal(t, "storgpamgmtscus01", output)
 
 	output = terraform.Output(t, options, "test_one_subnet")
-	assert.Equal(t, "snet-pa-mgt-scus-01", output)
+	assert.Equal(t, "snet-pa-mgmt-scus-01", output)
 
 	output = terraform.Output(t, options, "test_one_virtual_network")
-	assert.Equal(t, "vnet-pa-mgt-scus-03", output)
+	assert.Equal(t, "vnet-pa-mgmt-scus-03", output)
 
 	//test_two_virtual_network = "vnet-svt-prd-acc-cc-02"
 	output = terraform.Output(t, options, "test_one_rg")
-	assert.Equal(t, "rg-pa-mgt-scus-01", output)
+	assert.Equal(t, "rg-pa-mgmt-scus-01", output)
 
 	// //**********************************
 	// //test_two module

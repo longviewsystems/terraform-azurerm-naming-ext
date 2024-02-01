@@ -1,12 +1,22 @@
 repos:
 - repo: https://github.com/antonbabenko/pre-commit-terraform
-  rev: v1.60.0 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+  rev: v1.86.0 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
   hooks:
-    - id: terraform_fmt
-    - id: terraform_docs
     - id: terraform_tflint
       name: Initialize tflint 
       args: 
         - --args=--init
-        - --args=--config=__GIT_WORKING_DIR__/.tflint.hcl    
+        - --args=--config=__GIT_WORKING_DIR__/.tflint.hcl  
+    - id: terraform_fmt
+    - id: terraform_docs
     - id: terraform_tflint
+    - id: checkov
+      name: Checkov
+      description: This hook runs checkov.
+      entry: checkov -d . --skip-check CKV2_GHA_1,CKV_TF_1,CKV_AZURE_41,CKV_AZURE_151
+      language: python
+      pass_filenames: false
+      always_run: false
+      files: \.tf$
+      exclude: \.+.terraform\/.*$
+      require_serial: true    

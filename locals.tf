@@ -7,4 +7,12 @@ locals {
 
   #This is the normal list.  Remove the special ones.
   normal_list = setsubtract(var.resource_types, local.client_specific_resource_types)
+
+  #abbreviate the location
+  abbreviate_location = lookup(local.builtin_azure_geo_codes, var.location, "")
+
+  #if the location is not in the list, use the full location
+
+  geo_code_name = local.abbreviate_location != "" ? local.abbreviate_location : var.location
+
 }
