@@ -5,7 +5,7 @@ plugin "azurerm" {
 }
 
 config {
-  module = true
+  module = false
 }
 
 # Enable rules that are good practice, but enabled by default 
